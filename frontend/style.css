@@ -18,13 +18,17 @@ a:hover{
 
 }
 button {
+    cursor:pointer;
+}
+input,
+button {
     font: 1.6rem helvetica;
     padding: 1rem;
     border: 0.1rem #808080 solid;
     border-radius:0.5rem;
-    cursor: pointer;
 }
 
+input:hover,
 button:hover{
     border:0.1rem #404040 solid;
 
@@ -34,6 +38,35 @@ button.primary{
 
     background-color: #f0c040;
 }
+
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 16, 16, 0.5);
+  }
+  .overlay.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+  }
+  .overlay > div {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 40rem;
+  }
+  .overlay > div > * {
+    margin: 2rem;
+  }
 
 .fw{
     width: 100%;
@@ -250,4 +283,31 @@ footer{
   .cart-list select {
     font-size: 1.3rem;
     padding: 0.5rem;
+  }
+
+
+  /* Form */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .form-items {
+    display: flex;
+    flex-direction: column;
+    width: 32rem;
+    padding: 2rem;
+    border: 0.1rem #c0c0c0 solid;
+    border-radius: 0.5rem;
+    list-style-type: none;
+  }
+  .form-items li {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  .form-container h1 {
+    font-size: 2.5rem;
   }
