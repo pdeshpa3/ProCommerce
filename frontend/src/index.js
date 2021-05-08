@@ -2,20 +2,28 @@ import Header from './components/header';
 import CartScreen from './screens/CartScreen';
 import Error404Screen from './screens/Error404Screen';
 import HomeScreen from './screens/HomeScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import OrderScreen from './screens/OrderScreen';
 import ProductScreen from './screens/ProductScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import ShippingScreen from './screens/ShippingScreen';
 import SigninScreen from './screens/SigninScreen';
 import { hideLoading, parseRequestUrl, showLoading } from './utils';
+import PlaceOrderScreen from './screens/PlaceOrderScreen';
 
 const routes = {
     '/': HomeScreen,
     '/product/:id': ProductScreen, 
+    '/order/:id': OrderScreen,
     '/cart/:id': CartScreen,
     '/cart': CartScreen,
     '/signin': SigninScreen,
     '/register': RegisterScreen,
     '/profile' : ProfileScreen,
+    '/shipping': ShippingScreen,
+    '/payment': PaymentScreen,
+    '/placeorder': PlaceOrderScreen,
 };
 
 const router = async() =>{
