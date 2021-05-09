@@ -11,9 +11,15 @@ import ShippingScreen from './screens/ShippingScreen';
 import SigninScreen from './screens/SigninScreen';
 import { hideLoading, parseRequestUrl, showLoading } from './utils';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
+import DashboardScreen from './screens/DashboardScreen';
+import ProductListScreen from './screens/ProductListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
+import OrderListScreen from './screens/OrderListScreen';
+
 
 const routes = {
     '/': HomeScreen,
+    '/product/:id/edit': ProductEditScreen,
     '/product/:id': ProductScreen, 
     '/order/:id': OrderScreen,
     '/cart/:id': CartScreen,
@@ -24,6 +30,11 @@ const routes = {
     '/shipping': ShippingScreen,
     '/payment': PaymentScreen,
     '/placeorder': PlaceOrderScreen,
+    '/dashboard': DashboardScreen,
+    '/productlist': ProductListScreen,
+    '/orders': OrderListScreen,
+    
+    
 };
 
 const router = async() =>{
@@ -32,6 +43,7 @@ const router = async() =>{
     const parseUrl = (request.resource ? `/${request.resource}`:'/') +
     (request.id ? '/:id':'') + 
     (request.verb ? `/${request.verb}`:'');
+    console.log(request);
     const screen = routes[parseUrl] ? routes[parseUrl]: Error404Screen;
     const header = document.getElementById('header-container');
     header.innerHTML = await Header.render();

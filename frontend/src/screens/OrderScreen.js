@@ -7,6 +7,7 @@ import {
   showMessage,
   rerender,
 } from '../utils';
+
 import { getOrder, getPaypalClientId, payOrder } from '../api';
 
 
@@ -84,6 +85,7 @@ const handlePayment = (clientId, totalPrice) => {
 const OrderScreen = {
   after_render: async () => {},
   render: async() => {
+    
     const request = parseRequestUrl();
     const {
       _id,
@@ -161,7 +163,8 @@ const OrderScreen = {
                  <li><div>Tax</div><div>$${taxPrice}</div></li>
                  <li class="total"><div>Order Total</div><div>$${totalPrice}</div></li>                  
                  <li><div class="fw" id="paypal-button"></div></li>
-                 <li>
+                 
+                 
                 
         </div>
       </div>
