@@ -1,23 +1,11 @@
 import DashboardMenu from '../components/DashboardMenu';
-import { getOrders, createOrder, deleteOrder } from '../api';
+import { getOrders,  deleteOrder } from '../api';
 import { showLoading, hideLoading, rerender, showMessage } from '../utils';
 
 
 const OrderListScreen = {
     after_render: () => {
-        document
-          .getElementById('create-order-button')
-          .addEventListener('click', async () => {
-            const data = await createOrder();
-            document.location.hash = `/order/${data.order._id}/edit`;
-          });
-
-        const editButtons = document.getElementsByClassName('edit-button');
-        Array.from(editButtons).forEach((editButton) => {
-            editButton.addEventListener('click', () => {
-            document.location.hash = `/order/${editButton.id}/edit`;
-         });
-        });
+       
         const deleteButtons = document.getElementsByClassName('delete-button');
         Array.from(deleteButtons).forEach((deleteButton) => {
             deleteButton.addEventListener('click', async () => {
@@ -46,18 +34,17 @@ const OrderListScreen = {
     ${DashboardMenu.render({ selected: 'orders' })}
     <div class="dashboard-content">
       <h1>Orders</h1>
-      <button id="create-order-button" class="primary">
-        Create Order
-      </button>
+    
       <div class="order-list">
         <table>
           <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
-              <th>PRICE</th>
-              <th>CATEGORY</th>
-              <th>BRAND</th>
+              <th>DATE</th>
+              <th>TOTAL</th>
+              <th>USER</th>
+              <th>PAID AT</th>
+              <th>DELIVERED AT</th>
               <th class="tr-action">ACTION</th>
             <tr>
           </thead>
@@ -67,12 +54,13 @@ const OrderListScreen = {
                 (order) => `
             <tr>
               <td>${order._id}</td>
-              <td>${order.name}</td>
-              <td>${order.price}</td>
-              <td>${order.category}</td>
-              <td>${order.brand}</td>
+              <td>${order.createdAt}</td>
+              <td>${order.totalPrice}</td>
+              <td>${order.user.name}</td>
+              <td>${order.paidAt || 'No'}</td>
+              <td>${order.deliveredAt || 'No'}</td>
               <td>
-              <button id="${order._id}" class="edit-button">Edit</button>
+              
               <button id="${order._id}" class="delete-button">Delete</button>
               </td>
             </tr>

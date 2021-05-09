@@ -10,7 +10,7 @@ orderRouter.get(
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
-    const orders = await Order.find({});
+    const orders = await Order.find({}).populate('user'); // orderModel has reference to UserModel, it loads info about User from its model 
     res.send(orders);
   })
 );

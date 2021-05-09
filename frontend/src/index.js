@@ -32,7 +32,7 @@ const routes = {
     '/placeorder': PlaceOrderScreen,
     '/dashboard': DashboardScreen,
     '/productlist': ProductListScreen,
-    '/orders': OrderListScreen,
+    '/orderlist': OrderListScreen,
     
     
 };
