@@ -1,6 +1,6 @@
 # ProCommerce - An Amazon Clone
 
-Note: Website is deployed on heroku and a free tier is used. As per heroku policy, images get deleted after 30 mins. 
+Note: Website is live and fully functioning, deployed on heroku and a free tier is used. As per heroku policy, images get deleted after 30 mins. 
 So snapshots shared in Readme provide a more accurate view of the website.
 http://procommerce.herokuapp.com/
 
