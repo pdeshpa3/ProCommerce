@@ -1,6 +1,8 @@
 # ProCommerce - An Amazon Clone
 
-Note: Website is deployed on heroku and a free tier is used. As per heroku policy, images gets deleted after 30 mins. So snapshots shared in Readme provide a more accurate view of the website.
+Note: Website is deployed on heroku and a free tier is used. As per heroku policy, images get deleted after 30 mins. 
+So snapshots shared in Readme provide a more accurate view of the website.
+http://procommerce.herokuapp.com/
 
 ProCommerce is a responsive e-commerce web application that provides a complete shopping experience to users. Users can purchase fashion merchandise and make a payment via 
 Paypal after registration. Admin of the website has ability to view all orders, products, analytics info. Admin can also create/edit/delete products. 
